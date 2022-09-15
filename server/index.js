@@ -1,13 +1,15 @@
-const io = require('socket.io')(5000,{
-    cors:{
-    origin:['http://localhost:3000']
-    }
-})
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
-io.on('connection', socket => {
-    console.log(socket.id)
-    socket.on('send event',(msg)=>{
-        io.emit('receive event',msg)
-        
-    })
-})
+dotenv.config()
+
+
+const app = express()
+app.use(express.json())
+
+
+const port = process.env.PORT || 5000
+mongoose.connect(process.env.MONGO_URI).then(app.listen(port, () => console.log(`server running on ${port}`))).catch((error) => console.log(error.message))
+
+
