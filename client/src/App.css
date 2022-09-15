@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+.box {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  min-height: 500px;
+  max-height: fit-content;
+  overflow: scroll;
+  background-color: rgba(154, 154, 154, 0.397);
+}
+.box .receiver{
+ justify-content: flex-end;
+}
+
+.chat-container {
+  padding: 0;
+  margin: calc(100% - 95%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Roboto Mono";
+}
+
+.sender {
+  display: inline;
+  width: fit-content;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  background-color: white;
+}
+
+.receiver {
+  display: inline;
+  align-self: flex-end;
+  width: fit-content;
+  color: white;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+}
+
+.message-form {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+}
+
+.message-form form {
+  display: flex;
+  justify-content: space-between;
+}
+.message-form input {
+  height: 40px;
+  width: 100%;
+}
+
+.message-form button {
+  margin-left: 4px;
+  background-color: rgb(27, 186, 239);
+  padding: 0 30px;
+  border-radius: 2px;
+  border: 0;
+  color: aliceblue;
+  font-family: "Roboto Mono";
+}
+
+.message-form button:hover {
+  background-color: aliceblue;
+  padding: 0 28px;
+  color: rgb(27, 186, 239);
+  border: 2px solid rgb(27, 186, 239);
+}
