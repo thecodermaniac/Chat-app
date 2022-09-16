@@ -1,5 +1,109 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (max-width: 600px) {
+  .tab-selection {
+    width: 100%;
+    margin: 1em 10px;
+  }
+  .content form{
+    width: 100%;
+    margin: 0 10px
+  }
+}
+
+@media only screen and (min-width: 605px) {
+  .tab-selection {
+    margin: 2em 0;
+    width: 30%;
+  }
+  .content form{
+    width: 30%;
+  }
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(52, 161, 211);
+}
+.tab-selection {
+
+  display: flex;
+  justify-content: space-between;
+}
+.tab-button-on {
+  width: 50%;
+  border-radius: 10px;
+  padding: 10px;
+  border: 0;
+  background-color: rgb(52, 161, 211);
+  font-size: larger;
+  color: white;
+  font-family: "Indie Flower", "cursive";
+}
+
+.tab-button-off {
+  width: 50%;
+  border-radius: 10px;
+  padding: 10px;
+  border: 0;
+  background-color: rgb(253, 255, 255);
+  font-size: larger;
+  font-family: "Indie Flower", "cursive";
+}
+
+.tab-selection button:hover {
+  background-color: rgb(52, 161, 211);
+  color: white;
+}
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.content form {
+  display: flex;
+  flex-direction: column;
+}
+.content form input {
+  height: 2em;
+  margin: 2em 0;
+  border-radius: 7px;
+  border: 1px solid grey;
+  font-family: Roboto Mono;
+}
+.content form label {
+  font-family: Roboto Mono;
+  font-size: 1em;
+}
+.content form button {
+  border-radius: 10px;
+  padding: 10px;
+  border: 0;
+  color: white;
+  background-color: rgb(52, 161, 211);
+  font-size: larger;
+  font-family: "Indie Flower", "cursive";
+}
+
+.content form button:hover{
+  background-color: rgb(255, 255, 255);
+  color: black;
+  padding: 8px;
+  border: 2px solid rgb(27, 186, 239);
+}
+
+.heading p {
+  font-family: "Indie Flower", "cursive";
+  color: rgb(230, 184, 84);
+  font-size: 3em;
+  font-weight: 600;
+}
 .box {
   display: inline-flex;
   flex-direction: column;
@@ -10,8 +114,8 @@
   overflow: scroll;
   background-color: rgba(154, 154, 154, 0.397);
 }
-.box .receiver{
- justify-content: flex-end;
+.box .receiver {
+  justify-content: flex-end;
 }
 
 .chat-container {
