@@ -4,24 +4,31 @@ import { io } from 'socket.io-client'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import HomePage from './components/HomePage';
 import ChatPage from './components/ChatPage'
+import ChatState from './context/ChatState';
 
 function App() {
   return (
     <>
-    <Router>
-      <Switch>
-      <Route exact path="/home">
-            <HomePage/>
-          </Route>
-          <Route exact path="/chat">
-            <ChatPage />
-          </Route>
-      </Switch>
-    </Router>
+      <ChatState>
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+              <Redirect to='/home' />
+            </Route>
+            <Route exact path="/home">
+              <HomePage />
+            </Route>
+            <Route exact path="/chat">
+              <ChatPage />
+            </Route>
+          </Switch>
+        </Router>
+      </ChatState>
     </>
   )
 }

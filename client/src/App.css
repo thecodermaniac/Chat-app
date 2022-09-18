@@ -10,20 +10,82 @@
     width: 100%;
     margin: 1em 10px;
   }
-  .content form{
+  .content form {
     width: 100%;
-    margin: 0 10px
+    margin: 0 10px;
+  }
+  .chat-box {
+    width: 100%;
+  }
+  .user-list {
+    display: none;
+    width: 0;
+    transition: width 0.2s;
   }
 }
 
+.user-side-list {
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  width: 80%;
+  background-color: rgb(241, 136, 136);
+  transition: width 0.4s;
+}
+
+.user-card-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-card{
+  display: flex;
+  margin: 10px 5px;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.user-card p{
+  display: inline-flex;
+  align-items: center;
+}
+
+.user-card img{
+  height: 40px;
+  width: auto;
+  border-radius: 20px;
+}
 @media only screen and (min-width: 605px) {
   .tab-selection {
     margin: 2em 0;
     width: 30%;
   }
-  .content form{
+  .content form {
     width: 30%;
   }
+  .chat-box {
+    width: 69%;
+  }
+  .user-list {
+    width: 30%;
+  }
+  .menu img {
+    display: none;
+  }
+}
+.chat-box {
+  height: 100vh;
+  background-color: rgb(17, 161, 177);
+}
+.user-list {
+  height: 100vh;
+  background-color: antiquewhite;
+}
+
+.container-box {
+  display: flex;
+  width: 100%;
+  height: 100vh;
 }
 .heading {
   display: flex;
@@ -32,7 +94,6 @@
   background-color: rgb(52, 161, 211);
 }
 .tab-selection {
-
   display: flex;
   justify-content: space-between;
 }
@@ -91,7 +152,7 @@
   font-family: "Indie Flower", "cursive";
 }
 
-.content form button:hover{
+.content form button:hover {
   background-color: rgb(255, 255, 255);
   color: black;
   padding: 8px;
