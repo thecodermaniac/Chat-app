@@ -44,7 +44,7 @@ const authUser = async (req, res) => {
 
     const user = await User.findOne({ email });
 
-    if (user && (await bcrypt.compare(req.body.password, user.password))) {
+    if (user && (await bcrypt.compare(password, user.password))) {
         res.json({
             _id: user._id,
             name: user.name,
@@ -58,5 +58,18 @@ const authUser = async (req, res) => {
     }
 };
 
+const allUsers = async (req, res) => {  //ekhane logged user chara baki sob user ke anar list debe ar setar query lekha hoche !
+    // const keyword = req.query.search
+    //     ? {
+    //         $or: [
+    //             { name: { $regex: req.query.search, $options: "i" } },
+    //             { email: { $regex: req.query.search, $options: "i" } },
+    //         ],
+    //     }
+    //     : {};
 
-module.exports = { registerUser,authUser };
+    const users = await User.find({ _id: { $ne: req.user._id } });
+    res.send(users);
+};
+
+module.exports = { registerUser, authUser, allUsers };
