@@ -1,10 +1,10 @@
 import React from 'react'
 
-function UserCard() {
+function UserCard({ name, imgpath }) {
   return (
     <div className='user-card'>
-      <p>User name</p>
-      <img src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" alt="" />
+      <p>{name}</p>
+      <img src={imgpath} alt="" />
     </div>
   )
 }
