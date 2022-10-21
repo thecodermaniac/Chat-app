@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 
 function SignUp() {
+  const history = useHistory()
   const [user, setuser] = useState({
     name: '',
     email: '',
@@ -20,11 +21,12 @@ function SignUp() {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/user",user,
+        "http://localhost:5000/api/user", user,
         config
       );
       console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
+      history.pushState('/chat')
     } catch (error) {
       console.log(error.response.data.errors);
     }

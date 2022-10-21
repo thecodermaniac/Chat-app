@@ -14,8 +14,9 @@ import ChatState from './context/ChatState';
 function App() {
   return (
     <>
-      <ChatState>
-        <Router>
+      <Router>
+        <ChatState>
+
           <Switch>
             <Route exact path='/'>
               <Redirect to='/home' />
@@ -27,8 +28,9 @@ function App() {
               <ChatPage />
             </Route>
           </Switch>
-        </Router>
-      </ChatState>
+        </ChatState>
+      </Router>
+
     </>
   )
 }

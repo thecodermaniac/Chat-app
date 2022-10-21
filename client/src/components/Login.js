@@ -1,8 +1,13 @@
 import React from 'react'
 import axios from "axios";
-import { useState } from "react";
+import { useState,useContext } from "react";
+import chatContext from '../context/Context'
+import { useHistory } from 'react-router-dom';
 
 function Login() {
+  const context = useContext(chatContext)
+  const {setuser } = context
+  const history =useHistory()
   const [loginuser, setloginuser] = useState({
     email: '',
     password: ''
@@ -22,6 +27,8 @@ function Login() {
       );
       console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
+      setuser(JSON.parse(localStorage.getItem('userInfo')))
+      history.push('/chat')
     } catch (error) {
       console.log(error.response.data.errors);
     }
